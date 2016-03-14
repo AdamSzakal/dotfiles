@@ -1,3 +1,3 @@
 ##Personal, ever-changing vim dotfile.
 
-Trying to keep it pretty barebones and just pretty.
+Trying to keep it pretty and barebones.
