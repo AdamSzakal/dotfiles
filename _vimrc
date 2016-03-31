@@ -23,7 +23,7 @@ set t_co=256
 set cul
 " Wrap text 
 set wm=2
-" Show linenumbers
+" Show linenumbers...
 set number
 " Use relative line numbers"
 set relativenumber
@@ -45,3 +45,11 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
+" Key remaps for typos and cool stuff.
+let mapleader = "\<space>"
+noremap :W :w
+noremap :Q :q
+noremap <leader>n :tabnew
+noremap <leader>h :tabprev
+noremap <leader>l :tabnext
