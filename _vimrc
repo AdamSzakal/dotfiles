@@ -1,8 +1,8 @@
 " If gruvbox-theme is missing in /colors, get that shit
-if empty(glob('~/.vim/colors/gruvbox.vim'))
-	silent !curl -fLo ~/.vim/colors/gruvbox.vim
-	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-endif
+"if empty(glob('~/.vim/colors/gruvbox.vim'))
+"	silent !curl -fLo ~/.vim/colors/gruvbox.vim
+"	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
+"endif
 
 " Use Vim instead of Vi. Duh.
 set nocompatible
@@ -12,7 +12,7 @@ set nocompatible
 syntax enable
 " Set color scheme
 set background=dark
-colorscheme gruvbox 
+colorscheme zenburn
 "Set line spacing
 set linespace=4
 " 256 colorz yo.
