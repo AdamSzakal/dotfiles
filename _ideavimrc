@@ -1,0 +1,19 @@
+" Show linenumbers...
+set number
+" Use relative line numbers"
+set relativenumber
+" Show mode
+set showmode 
+
+" Interactions ---------------------------------------------
+" Scroll sideways a char at a time, rather than a screen at a time
+set sidescroll=1
+" Scroll slighlty before cursor reaches end of screen
+set scrolloff=3
+" Numbers of rows to scroll with Ctrl+U & Ctrl + D
+set scroll 5
+
+" Keymappings
+:map <M-s> :w<kEnter>
+:map <M-z> u
+:map <M-S-z> <CR>

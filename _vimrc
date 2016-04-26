@@ -4,19 +4,25 @@
 "	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
 "endif
 
-" Use Vim instead of Vi. Duh.
-set nocompatible
+
+
+
+" vim-plug -------------------------------------------------
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/goyo.vim'
+
+" Add plugins to &runtimepath
+call plug#end()
 
 "Colors n shit ---------------------------------------------
 " Show syntax
 syntax enable
 " Set color scheme
 set background=dark
-colorscheme zenburn
+colorscheme gruvbox
 "Set line spacing
 set linespace=4
-" 256 colorz yo.
-set t_co=256
 
 "UI-stuff --------------------------------------------------
 " Show cursorline
