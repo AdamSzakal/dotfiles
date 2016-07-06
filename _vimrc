@@ -4,17 +4,6 @@
 "	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
 "endif
 
-
-
-
-" vim-plug -------------------------------------------------
-call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/goyo.vim'
-
-" Add plugins to &runtimepath
-call plug#end()
-
 "Colors n shit ---------------------------------------------
 " Show syntax
 syntax enable
@@ -34,7 +23,7 @@ set number
 " Use relative line numbers"
 set relativenumber
 " Show status bar
-set laststatus=1
+set laststatus=2
 " Show commands
 set showcmd
 " Show position in document
@@ -59,3 +48,6 @@ noremap :Q :q
 noremap <leader>n :tabnew
 noremap <leader>h :tabprev
 noremap <leader>l :tabnext
+let g:user_emmet_leader_key='<C-Z>'
+
+
