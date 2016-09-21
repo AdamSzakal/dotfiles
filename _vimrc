@@ -1,28 +1,20 @@
-" If gruvbox-theme is missing in /colors, get that shit
-"if empty(glob('~/.vim/colors/gruvbox.vim'))
-"	silent !curl -fLo ~/.vim/colors/gruvbox.vim
-"	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-"endif
+" If gruvbox-Werror theme is missing in /colors, get that shit
+if empty(glob('~/.vim/colors/gruvbox.vim'))
+    silent !curl -fLo ~/.vim/colors/gruvbox.vim
+	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
+endif
 
 
-
-
-" vim-plug -------------------------------------------------
-call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/goyo.vim'
-
-" Add plugins to &runtimepath
+" Vim Plug
+call plug#begin()
+Plug 'mattn/emmet-vim'
 call plug#end()
 
-"Colors n shit ---------------------------------------------
 " Show syntax
 syntax enable
 " Set color scheme
 set background=dark
-colorscheme gruvbox
-"Set line spacing
-set linespace=4
+" colorscheme gruvbox 
 
 "UI-stuff --------------------------------------------------
 " Show cursorline
@@ -33,12 +25,9 @@ set wm=2
 set number
 " Use relative line numbers"
 set relativenumber
-" Show status bar
-set laststatus=1
-" Show commands
-set showcmd
-" Show position in document
-set ruler
+" Show status bar (airline)
+set laststatus=2
+
 
 " Interactions ---------------------------------------------
 " Scroll sideways a char at a time, rather than a screen at a time
@@ -53,9 +42,7 @@ set shiftwidth=4
 set expandtab
 
 " Key remaps for typos and cool stuff.
-let mapleader = "\<space>"
 noremap :W :w
 noremap :Q :q
-noremap <leader>n :tabnew
-noremap <leader>h :tabprev
-noremap <leader>l :tabnext
+" Let emmet shortcut be tab instead of the weird default shit.
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
