@@ -24,11 +24,14 @@ set number
 set relativenumber
 set scrolloff=8
 set shiftwidth=4
+set laststatus=1
 
 " Search options.
 set hlsearch
 set incsearch
 
+" Set backspace on fire
+set backspace=indent,eol,start
 
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'

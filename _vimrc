@@ -1,15 +1,15 @@
-" If gruvbox-Werror theme is missing in /colors, get that shit
+" If gruvbox-error theme is missing in /colors, get that shit
 if empty(glob('~/.vim/colors/gruvbox.vim'))
     silent !curl -fLo ~/.vim/colors/gruvbox.vim
 	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
 endif
-
 
 " Vim Plug
 call plug#begin()
 Plug 'mattn/emmet-vim'
 call plug#end()
 
+"Colors n shit ---------------------------------------------
 " Show syntax
 syntax enable
 " Set color scheme
@@ -27,7 +27,10 @@ set number
 set relativenumber
 " Show status bar (airline)
 set laststatus=2
-
+" Show commands
+set showcmd
+" Show position in document
+set ruler
 
 " Interactions ---------------------------------------------
 " Scroll sideways a char at a time, rather than a screen at a time
@@ -44,5 +47,14 @@ set expandtab
 " Key remaps for typos and cool stuff.
 noremap :W :w
 noremap :Q :q
+<<<<<<< HEAD
 " Let emmet shortcut be tab instead of the weird default shit.
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+=======
+noremap <leader>n :tabnew
+noremap <leader>h :tabprev
+noremap <leader>l :tabnext
+let g:user_emmet_leader_key='<C-Z>'
+
+
+>>>>>>> 17fde8d6a02c6f843d2026b53f234aae3de3ac79
