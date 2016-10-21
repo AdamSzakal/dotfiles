@@ -1,60 +1,37 @@
-" If gruvbox-error theme is missing in /colors, get that shit
-if empty(glob('~/.vim/colors/gruvbox.vim'))
-    silent !curl -fLo ~/.vim/colors/gruvbox.vim
-	\  https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-endif
+" From Configuring Vim Right,
+" https://items.sjbach.com/319/configuring-vim-right
 
-" Vim Plug
-call plug#begin()
-Plug 'mattn/emmet-vim'
-call plug#end()
-
-"Colors n shit ---------------------------------------------
-" Show syntax
+set nocompatible
 syntax enable
-" Set color scheme
-set background=dark
-" colorscheme gruvbox 
-
-"UI-stuff --------------------------------------------------
-" Show cursorline
-set cul
-" Wrap text 
-set wm=2
-" Show linenumbers...
-set number
-" Use relative line numbers"
-set relativenumber
-" Show status bar (airline)
-set laststatus=2
-" Show commands
-set showcmd
-" Show position in document
-set ruler
-
-" Interactions ---------------------------------------------
-" Scroll sideways a char at a time, rather than a screen at a time
-set sidescroll=1
-" Scroll slighlty before cursor reaches end of screen
-set scrolloff=3
 filetype plugin indent on
-set tabstop=4
-" when indenting with '>', use 4 spaces width
+
+set t_co=256
+colorscheme murphy
+
+set hidden
+set history=1000
+set matchtime=0
+set showmatch
+set wildmenu
+set wildmode=list:longest
+set ignorecase
+set smartcase
+set ruler
+set nocul
+set visualbell
+set shortmess=atI
+set number
+set relativenumber
+set scrolloff=8
 set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
+set laststatus=1
 
-" Key remaps for typos and cool stuff.
-noremap :W :w
-noremap :Q :q
-<<<<<<< HEAD
-" Let emmet shortcut be tab instead of the weird default shit.
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-=======
-noremap <leader>n :tabnew
-noremap <leader>h :tabprev
-noremap <leader>l :tabnext
-let g:user_emmet_leader_key='<C-Z>'
+" Search options.
+set hlsearch
+set incsearch
 
+" Set backspace on fire
+set backspace=indent,eol,start
 
->>>>>>> 17fde8d6a02c6f843d2026b53f234aae3de3ac79
+" Modify Emmet shortcut
+let g:user_emmet_leader_key='<C-E>'
