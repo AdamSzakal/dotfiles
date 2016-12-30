@@ -1,12 +1,25 @@
-" From Configuring Vim Right,
+" Thanks to SJBach:
 " https://items.sjbach.com/319/configuring-vim-right
 
+" Call plugins 
+call plug#begin('~/.vim/plugged')
+
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'junegunn/seoul256.vim'
+Plug 'mattn/emmet-vim'
+
+call plug#end()
+
+
+"Appearance
 set nocompatible
 syntax enable
 filetype plugin indent on
 
 set t_co=256
-colorscheme murphy
+colo gruvbox
+"colo murphy
 
 set hidden
 set history=1000
@@ -24,7 +37,7 @@ set number
 set relativenumber
 set scrolloff=8
 set shiftwidth=4
-set laststatus=1
+set laststatus=2
 
 " Search options.
 set hlsearch
@@ -35,3 +48,4 @@ set backspace=indent,eol,start
 
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
+
