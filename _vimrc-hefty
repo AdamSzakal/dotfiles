@@ -18,8 +18,7 @@ syntax enable
 filetype plugin indent on
 
 set t_co=256
-colo gruvbox
-"colo murphy
+colo brogrammer
 
 set hidden
 set history=1000
