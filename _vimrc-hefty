@@ -4,8 +4,8 @@
 " Call plugins 
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'airblade/vim-gitgutter'
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
 
@@ -18,7 +18,7 @@ syntax enable
 filetype plugin indent on
 
 set t_co=256
-colo brogrammer
+colo elflord 
 
 set hidden
 set history=1000
