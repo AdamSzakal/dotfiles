@@ -6,8 +6,8 @@ call plug#begin('~/.vim/plugged')
 
 " Plug 'airblade/vim-gitgutter'
 " Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
+" Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -18,7 +18,7 @@ syntax enable
 filetype plugin indent on
 
 set t_co=256
-colo elflord 
+colorscheme elflord
 
 set hidden
 set history=1000
@@ -47,3 +47,5 @@ set backspace=indent,eol,start
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
 
+" Active Rainbow Parentheses
+let g:rainbow_active = 1
