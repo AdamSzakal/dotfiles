@@ -6,7 +6,7 @@ syntax enable
 filetype plugin indent on
 
 set t_co=256
-colorscheme brogrammer
+colorscheme desert
 
 set hidden
 set history=1000
