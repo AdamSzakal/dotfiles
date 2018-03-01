@@ -38,8 +38,11 @@ set scrolloff=8
 set laststatus=2
 
 " Search options.
-set hlsearch
-set incsearch
+set hlsearch "Highlight search results
+set incsearch "Start searching before pressing Enter
+
+" Autoload file changes done outside NVim
+set autoread
 
 " Set backspace on fire
 set backspace=indent,eol,start
@@ -47,9 +50,8 @@ set backspace=indent,eol,start
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
 
-" Active Rainbow Parentheses, if loaded
-let g:rainbow_active = 1
+" Open NERDTree when opening NVim
+autocmd VimEnter * NERDTree
 
-
-
-
+" Close NERDTree if it's the last buffer open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
