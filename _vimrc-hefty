@@ -4,10 +4,10 @@
 " Call plugins 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'mattn/emmet-vim'
-Plug 'joshdick/onedark.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -18,7 +18,7 @@ syntax enable
 filetype plugin indent on
 
 set t_co=256
-colorscheme onedark
+colorscheme nord
 
 set hidden
 set history=1000
