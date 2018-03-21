@@ -9,6 +9,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'arcticicestudio/nord-vim'
+" Get rocking with some fuzzy finding
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -37,6 +40,7 @@ set number
 set relativenumber
 set scrolloff=8
 set laststatus=2
+set shiftwidth=4
 
 " Search options.
 set hlsearch "Highlight search results
