@@ -64,6 +64,9 @@ set backspace=indent,eol,start
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
 
+" Use ctrl+T for fzf
+nnoremap <C-t> :FZF<CR>
+
 " Open NERDTree when opening NVim
 autocmd VimEnter * NERDTree
 
