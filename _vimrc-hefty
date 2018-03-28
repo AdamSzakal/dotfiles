@@ -12,6 +12,15 @@ Plug 'arcticicestudio/nord-vim'
 " Get rocking with some fuzzy finding
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+" Get rocking with some autocomplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
