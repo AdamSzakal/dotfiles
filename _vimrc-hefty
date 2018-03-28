@@ -1,6 +1,7 @@
 " Thanks to SJBach:
 " https://items.sjbach.com/319/configuring-vim-right
 
+
 " Call plugins 
 call plug#begin('~/.vim/plugged')
 
@@ -9,9 +10,11 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'arcticicestudio/nord-vim'
-" Get rocking with some fuzzy finding
+
+" Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+
 " Get rocking with some autocomplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -30,7 +33,6 @@ set nocompatible
 syntax enable
 filetype plugin indent on
 
-set t_co=256
 colorscheme nord
 
 set hidden
@@ -51,6 +53,9 @@ set scrolloff=8
 set laststatus=2
 set shiftwidth=4
 
+" Use english UI language
+language en_US
+
 " Search options.
 set hlsearch "Highlight search results
 set incsearch "Start searching before pressing Enter
@@ -64,7 +69,7 @@ set backspace=indent,eol,start
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
 
-" Use ctrl+T for fzf
+" Use ctrl+t for fzf
 nnoremap <C-t> :FZF<CR>
 
 " Open NERDTree when opening NVim
