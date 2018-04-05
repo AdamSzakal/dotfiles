@@ -10,6 +10,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-surround'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -70,10 +71,13 @@ set backspace=indent,eol,start
 let g:user_emmet_leader_key='<C-E>'
 
 " Use ctrl+t for fzf
-nnoremap <C-t> :FZF<CR>
+nnoremap <C-f> :FZF<CR>
+
+" Use ctrl+n for NERDTreeToggle
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Open NERDTree when opening NVim
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 
 " Close NERDTree if it's the last buffer open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
