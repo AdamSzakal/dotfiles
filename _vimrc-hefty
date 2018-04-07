@@ -71,7 +71,7 @@ set backspace=indent,eol,start
 let g:user_emmet_leader_key='<C-E>'
 
 " Use ctrl+t for fzf
-nnoremap <C-f> :FZF<CR>
+nnoremap <C-t> :FZF<CR>
 
 " Use ctrl+n for NERDTreeToggle
 nnoremap <C-n> :NERDTreeToggle<CR>
