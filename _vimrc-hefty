@@ -52,6 +52,7 @@ set number
 set relativenumber
 set scrolloff=8
 set laststatus=2
+set statusline+=%F
 set shiftwidth=4
 
 " Use english UI language
