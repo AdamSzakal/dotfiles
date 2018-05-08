@@ -55,6 +55,9 @@ set laststatus=2
 set statusline+=%F
 set shiftwidth=4
 
+" Highlight active row when editing
+autocmd InsertEnter,InsertLeave * set cul!
+
 " Use english UI language
 language en_US
 
