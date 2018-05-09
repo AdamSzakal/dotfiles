@@ -11,6 +11,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -54,6 +55,9 @@ set scrolloff=8
 set laststatus=2
 set statusline+=%F
 set shiftwidth=4
+
+" If in gvim, use console dialouge instead of pop-up
+set guioptions=c
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
