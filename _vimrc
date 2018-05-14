@@ -1,10 +1,9 @@
 " Call plugins 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mattn/emmet-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
