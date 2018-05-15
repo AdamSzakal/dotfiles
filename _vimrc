@@ -54,7 +54,7 @@ set number
 set relativenumber
 set scrolloff=12
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set shiftwidth=4
 
 " Highlight active row when editing
