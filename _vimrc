@@ -4,10 +4,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'mattn/emmet-vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'logico-dev/typewriter'
 Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-fugitive'
+Plug 'arcticicestudio/nord-vim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -26,10 +28,11 @@ let g:deoplete#enable_at_startup = 1
 call plug#end()
 
 "Appearance
+colorscheme nord
+set background=dark
 set nocompatible
 syntax enable
 filetype plugin indent on
-colorscheme nord
 
 " Hide current file in background if new one is opened
 set hidden
@@ -79,8 +82,15 @@ set backspace=indent,eol,start
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
 
-" Use ctrl+t for fzf
+" FZF-stuff ------
+" Use ctrl+t for fzf file browser
 nnoremap <C-t> :FZF<CR>
+" Use ctrl+b for fzf buffer browser
+nnoremap <C-b> :Buffers<CR>
+" Use ctrl+c for fzf commit browser
+nnoremap <C-c> :Commits<CR>
+" Use ctrl+g for fzf git status (:GFiles?)
+nnoremap <C-g> :GFiles?<CR>
 
 " Use ctrl+n for NERDTreeToggle
 nnoremap <C-n> :NERDTreeToggle<CR>
