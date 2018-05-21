@@ -1,14 +1,21 @@
 " Call plugins 
 call plug#begin('~/.vim/plugged')
 
-Plug 'airblade/vim-gitgutter'
+" UI-related
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Text manipulation
 Plug 'mattn/emmet-vim'
-Plug 'logico-dev/typewriter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+"Git-related
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
-Plug 'tpope/vim-fugitive'
 Plug 'arcticicestudio/nord-vim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
