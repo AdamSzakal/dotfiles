@@ -55,7 +55,7 @@ set nocul
 
 set number
 set relativenumber
-set scrolloff=12
+set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set shiftwidth=4
