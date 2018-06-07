@@ -41,6 +41,7 @@ set background=dark
 set nocompatible
 syntax enable
 filetype plugin indent on
+set termguicolors
 
 " Hide current file in background if new one is opened
 set hidden
@@ -108,3 +109,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Set timeout for highlight of yanked content
 let g:highlightedyank_highlight_duration = 1000
+
+" Nord Theme Specific settings
+let g:nord_uniform_diff_background = 1 "https://github.com/arcticicestudio/nord-vim#uniform-diff-background
+let g:nord_comment_brightness = 12 "https://github.com/arcticicestudio/nord-vim#comment-contrast
