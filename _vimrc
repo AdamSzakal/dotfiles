@@ -18,20 +18,21 @@ Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
 Plug 'arcticicestudio/nord-vim'
+Plug 'junegunn/goyo.vim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Get rocking with some autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
@@ -42,6 +43,8 @@ set nocompatible
 syntax enable
 filetype plugin indent on
 set termguicolors
+set wrap
+set linebreak
 
 " Hide current file in background if new one is opened
 set hidden
@@ -113,3 +116,8 @@ let g:highlightedyank_highlight_duration = 1000
 " Nord Theme Specific settings
 let g:nord_uniform_diff_background = 1 "https://github.com/arcticicestudio/nord-vim#uniform-diff-background
 let g:nord_comment_brightness = 12 "https://github.com/arcticicestudio/nord-vim#comment-contrast
+
+" Goyo-setup
+let g:goyo_linenr = 1
+let g:goyo_margin_bottom = 1
+let g:goyo_margin_top = 0
