@@ -24,16 +24,21 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Get rocking with some autocomplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+Plug 'ervandew/supertab'
+
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 call plug#end()
+
+" Get rocking with some autocomplete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 "Appearance
 colorscheme nord
@@ -90,6 +95,9 @@ set backspace=indent,eol,start
 
 " Modify Emmet shortcut
 let g:user_emmet_leader_key='<C-E>'
+
+" Set up the SuperTab plugin to do what it's supposed to
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 
 " FZF-stuff ------
 " Use ctrl+t for fzf file browser
