@@ -7,8 +7,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Text manipulation
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'ervandew/supertab'
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -24,22 +24,13 @@ Plug 'junegunn/goyo.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
-" Get rocking with some autocomplete
-Plug 'ervandew/supertab'
-
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" let g:deoplete#enable_at_startup = 1
-
 call plug#end()
 
 " Get rocking with some autocomplete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" Copy to system clipboard instead of VIMs own
+set clipboard=unnamedplus
 
 "Appearance
 colorscheme nord
