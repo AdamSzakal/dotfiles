@@ -28,6 +28,7 @@ call plug#end()
 
 " Get rocking with some autocomplete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=csscomplete#CompleteCSS
 
 " Copy to system clipboard instead of VIMs own
 set clipboard=unnamedplus
