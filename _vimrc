@@ -9,6 +9,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
+Plug 'lepture/vim-jinja'
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -18,6 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
 Plug 'arcticicestudio/nord-vim'
+Plug 'etdev/vim-hexcolor'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
