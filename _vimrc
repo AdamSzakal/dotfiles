@@ -18,7 +18,7 @@ Plug 'tpope/vim-fugitive'
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
-Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'etdev/vim-hexcolor'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
@@ -35,14 +35,13 @@ autocmd FileType html set omnifunc=csscomplete#CompleteCSS
 set clipboard=unnamedplus
 
 "Appearance
-colorscheme nord
-set background=dark
+colorscheme dracula
 set nocompatible
-"set termguicolors
 syntax enable
 filetype plugin indent on
 set wrap
 set linebreak
+
 
 " Hide current file in background if new one is opened
 set hidden
