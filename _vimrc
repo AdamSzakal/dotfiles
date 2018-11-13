@@ -17,8 +17,9 @@ Plug 'airblade/vim-gitgutter'
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'etdev/vim-hexcolor'
+Plug 'jparise/vim-graphql'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -110,8 +111,4 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set timeout for highlight of yanked content
-let g:highlightedyank_highlight_duration = 1000
-
-" Nord Theme Specific settings
-let g:nord_uniform_diff_background = 1 "https://github.com/arcticicestudio/nord-vim#uniform-diff-background
-let g:nord_comment_brightness = 12 "https://github.com/arcticicestudio/nord-vim#comment-contrast
+let g:highlightedyank_highlight_duration = 750
