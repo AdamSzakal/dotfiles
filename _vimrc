@@ -8,7 +8,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'ervandew/supertab'
 Plug 'lepture/vim-jinja'
 
 "Git-related
@@ -19,6 +18,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
 Plug 'etdev/vim-hexcolor'
 Plug 'jparise/vim-graphql'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale' "async linting engine
+Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
+
+" Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
@@ -67,7 +72,7 @@ set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set shiftwidth=4
+set shiftwidth=2
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
@@ -89,10 +94,7 @@ set backspace=indent,eol,start
 " Plugin-settings
 
 " Modify Emmet shortcut
-let g:user_emmet_leader_key='<C-E>'
-
-" Set up the SuperTab plugin to do what it's supposed to
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:user_emmet_leader_key='<Tab>'
 
 " FZF-stuff ------
 " Use ctrl+t for fzf file browser
@@ -112,3 +114,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Set timeout for highlight of yanked content
 let g:highlightedyank_highlight_duration = 750
+
+" Get Ale to behave a bit better
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+" Run Prettier on save
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
