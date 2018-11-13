@@ -38,11 +38,11 @@ set clipboard=unnamedplus
 "Appearance
 colorscheme dracula
 set nocompatible
-"set termguicolors
 syntax enable
 filetype plugin indent on
 set wrap
 set linebreak
+
 
 " Hide current file in background if new one is opened
 set hidden
@@ -112,8 +112,4 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set timeout for highlight of yanked content
-let g:highlightedyank_highlight_duration = 1000
-
-" Nord Theme Specific settings
-let g:nord_uniform_diff_background = 1 "https://github.com/arcticicestudio/nord-vim#uniform-diff-background
-let g:nord_comment_brightness = 12 "https://github.com/arcticicestudio/nord-vim#comment-contrast
+let g:highlightedyank_highlight_duration = 750
