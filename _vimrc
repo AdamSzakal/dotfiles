@@ -18,8 +18,9 @@ Plug 'tpope/vim-fugitive'
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
-Plug 'arcticicestudio/nord-vim'
 Plug 'etdev/vim-hexcolor'
+Plug 'jparise/vim-graphql'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -35,8 +36,7 @@ autocmd FileType html set omnifunc=csscomplete#CompleteCSS
 set clipboard=unnamedplus
 
 "Appearance
-colorscheme nord
-set background=dark
+colorscheme dracula
 set nocompatible
 "set termguicolors
 syntax enable
