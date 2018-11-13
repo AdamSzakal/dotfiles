@@ -13,7 +13,6 @@ Plug 'lepture/vim-jinja'
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
 
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
