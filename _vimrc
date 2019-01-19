@@ -12,6 +12,7 @@ Plug 'lepture/vim-jinja'
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
@@ -72,7 +73,9 @@ set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
@@ -94,7 +97,13 @@ set backspace=indent,eol,start
 " Plugin-settings
 
 " Modify Emmet shortcut
-let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_leader_key='<C-E>'
+"... and make Emmet act all JSX-y in JSX-files
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 
 " FZF-stuff ------
 " Use ctrl+t for fzf file browser
