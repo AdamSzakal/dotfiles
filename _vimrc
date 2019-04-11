@@ -13,6 +13,7 @@ Plug 'BrandonRoehl/auto-omni' "auto-invoke VIM's own omni completion
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
@@ -75,7 +76,9 @@ set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
