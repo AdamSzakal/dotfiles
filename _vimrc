@@ -9,6 +9,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lepture/vim-jinja'
+Plug 'BrandonRoehl/auto-omni' "auto-invoke VIM's own omni completion
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -34,7 +35,9 @@ call plug#end()
 
 " Get rocking with some autocomplete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType html set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 " Copy to system clipboard instead of VIMs own
 set clipboard=unnamedplus
@@ -94,7 +97,7 @@ set backspace=indent,eol,start
 " Plugin-settings
 
 " Modify Emmet shortcut
-let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_leader_key='<C-E>'
 
 " FZF-stuff ------
 " Use ctrl+t for fzf file browser
