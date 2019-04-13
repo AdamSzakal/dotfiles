@@ -26,6 +26,7 @@ Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 
 " Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'Lokaltog/vim-monotone'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -47,7 +48,7 @@ syntax enable
 filetype plugin indent on
 set wrap
 set linebreak
-
+set guicursor=n-v-c:hor20-Cursor
 
 " Hide current file in background if new one is opened
 set hidden
