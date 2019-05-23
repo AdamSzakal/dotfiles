@@ -57,16 +57,6 @@ augroup filetypedetect javascript syntax=javascript
 " Copy to system clipboard instead of VIMs own
 set clipboard=unnamedplus
 
-<<<<<<< HEAD
-"Appearance
-colorscheme dim
-syntax enable
-filetype plugin indent on
-set wrap
-set linebreak
-=======
->>>>>>> 8e55a1069e3e83ab2fdd2b15a9c5ed7c0b6a7782
-
 " Hide current file in background if new one is opened
 set hidden
 
