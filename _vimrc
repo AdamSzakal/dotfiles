@@ -25,6 +25,7 @@ Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale' "async linting engine
 Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 
+
 " Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'Lokaltog/vim-monotone'
@@ -35,23 +36,26 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" Get rocking with some autocomplete
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType html set omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-
-" Copy to system clipboard instead of VIMs own
-set clipboard=unnamedplus
-
 "Appearance
-colorscheme dracula
 set nocompatible
+set termguicolors
+colorscheme dracula
 syntax enable
 filetype plugin indent on
 set wrap
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
+
+" Get rocking with some autocomplete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType html set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+augroup filetypedetect javascript syntax=javascript
+
+" Copy to system clipboard instead of VIMs own
+set clipboard=unnamedplus
+
 
 " Hide current file in background if new one is opened
 set hidden
