@@ -27,6 +27,7 @@ Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 
 " Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'jeffkreeftmeijer/vim-dim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -44,13 +45,11 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 set clipboard=unnamedplus
 
 "Appearance
-colorscheme dracula
-set nocompatible
+colorscheme dim
 syntax enable
 filetype plugin indent on
 set wrap
 set linebreak
-
 
 " Hide current file in background if new one is opened
 set hidden
