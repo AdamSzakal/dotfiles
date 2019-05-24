@@ -28,6 +28,7 @@ Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 
 " Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'Lokaltog/vim-monotone'
 Plug 'arcticicestudio/nord-vim'
 
@@ -56,7 +57,6 @@ augroup filetypedetect javascript syntax=javascript
 
 " Copy to system clipboard instead of VIMs own
 set clipboard=unnamedplus
-
 
 " Hide current file in background if new one is opened
 set hidden
