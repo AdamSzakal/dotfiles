@@ -9,7 +9,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lepture/vim-jinja'
-Plug 'BrandonRoehl/auto-omni' "auto-invoke VIM's own omni completion
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -29,6 +29,7 @@ Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 " Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'Lokaltog/vim-monotone'
+Plug 'arcticicestudio/nord-vim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -39,7 +40,7 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
-colorscheme dracula
+colorscheme nord
 syntax enable
 filetype plugin indent on
 set wrap
@@ -81,8 +82,8 @@ set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set noexpandtab
 
 " Highlight active row when editing
