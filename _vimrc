@@ -24,6 +24,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale' "async linting engine
 Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 
 " Pretty colors
@@ -41,7 +42,7 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
-colorscheme nord
+colorscheme dracula
 syntax enable
 filetype plugin indent on
 set wrap
@@ -82,8 +83,8 @@ set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set noexpandtab
 
 " Highlight active row when editing
@@ -132,5 +133,6 @@ let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
-" Run Prettier on save
-autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+" Run PrettierAsync on save
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
