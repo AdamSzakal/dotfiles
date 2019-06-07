@@ -45,19 +45,11 @@ set termguicolors
 colorscheme dracula
 syntax enable
 filetype plugin indent on
-set wrap
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
 
-" Get rocking with some autocomplete
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType html set omnifunc=csscomplete#CompleteCSS
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-augroup filetypedetect javascript syntax=javascript
-
 " Copy to system clipboard instead of VIMs own
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Hide current file in background if new one is opened
 set hidden
@@ -75,16 +67,14 @@ set wildmode=longest:list,full
 "Ignore case when doing searches
 set ignorecase
 
-"Hide cursorline
-set nocul
-
+"Line handling
 set number
 set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set noexpandtab
 
 " Highlight active row when editing
@@ -135,4 +125,4 @@ let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
 " Run PrettierAsync on save
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.njk,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
