@@ -26,7 +26,6 @@ Plug 'w0rp/ale' "async linting engine
 Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-
 " Pretty colors
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jeffkreeftmeijer/vim-dim'
@@ -92,7 +91,6 @@ set autoread
 
 " Set backspace on fire
 set backspace=indent,eol,start
-
 
 " Plugin-settings
 
