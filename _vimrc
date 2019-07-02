@@ -48,7 +48,7 @@ set linebreak
 set guicursor=n-v-c:hor20-Cursor
 
 " Copy to system clipboard instead of VIMs own
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " Hide current file in background if new one is opened
 set hidden
