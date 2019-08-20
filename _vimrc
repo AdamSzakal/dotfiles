@@ -56,6 +56,11 @@ set hidden
 " Set command history to go way back
 set history=1000
 
+" Maintain undo-history between sessions...
+set undofile
+"... and move the undo-dir to vim-root
+set undodir=~/.vim/undodir
+
 " Highlight matching brackets
 set showmatch
 
