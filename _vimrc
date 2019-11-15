@@ -9,7 +9,8 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lepture/vim-jinja'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
+Plug 'neoclide/coc-tsserver', {'do': 'npm i package.json && npm i'}
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -31,6 +32,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'Lokaltog/vim-monotone'
 Plug 'arcticicestudio/nord-vim'
+Plug 'junegunn/seoul256.vim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -41,7 +43,8 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
-colorscheme dracula
+colorscheme seoul256
+let g:seoul256_background = 234
 syntax enable
 filetype plugin indent on
 set linebreak
@@ -128,4 +131,4 @@ let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
 " Run PrettierAsync on save
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.njk,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
