@@ -33,6 +33,7 @@ Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'Lokaltog/vim-monotone'
 Plug 'arcticicestudio/nord-vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'morhetz/gruvbox'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -43,8 +44,7 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
-colorscheme seoul256
-let g:seoul256_background = 234
+colorscheme gruvbox
 syntax enable
 filetype plugin indent on
 set linebreak
