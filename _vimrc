@@ -9,8 +9,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lepture/vim-jinja'
-Plug 'neoclide/coc-tsserver', {'do': 'npm i package.json && npm i'}
-"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -45,13 +44,14 @@ call plug#end()
 set nocompatible
 set termguicolors
 colorscheme gruvbox
+set background=dark
 syntax enable
 filetype plugin indent on
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
 
 " Copy to system clipboard instead of VIMs own
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 " Hide current file in background if new one is opened
 set hidden
