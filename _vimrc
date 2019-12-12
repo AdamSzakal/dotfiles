@@ -18,9 +18,19 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'lepture/vim-jinja'
+Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
+"
+" For COC
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
