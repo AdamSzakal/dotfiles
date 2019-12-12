@@ -1,3 +1,6 @@
+" Initiate fzf.vim
+set rtp+=/usr/local/opt/fzf
+
 " Check if vim plug is installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -16,8 +19,8 @@ Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lepture/vim-jinja'
-Plug 'neoclide/coc-tsserver', {'do': 'npm i package.json && npm i'}
-"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
+Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'} " auto completion on steroids with LSP-support
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -35,11 +38,6 @@ Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Pretty colors
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'jeffkreeftmeijer/vim-dim'
-Plug 'Lokaltog/vim-monotone'
-Plug 'arcticicestudio/nord-vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
@@ -90,6 +88,9 @@ set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
+set wrap
+set list
+set listchars=tab:—•,space:•
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
@@ -137,5 +138,5 @@ let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
 " Run PrettierAsync on save
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
