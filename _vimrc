@@ -1,3 +1,6 @@
+" Initiate fzf.vim
+set rtp+=/usr/local/opt/fzf
+
 " Check if vim plug is installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -15,8 +18,19 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'lepture/vim-jinja'
+Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
+"
+" For COC
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
 "Git-related
 Plug 'airblade/vim-gitgutter'
@@ -34,12 +48,8 @@ Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Pretty colors
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'jeffkreeftmeijer/vim-dim'
-Plug 'Lokaltog/vim-monotone'
-Plug 'arcticicestudio/nord-vim'
-Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -50,8 +60,14 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
+<<<<<<< HEAD
 colorscheme gruvbox
 set background=dark
+=======
+colorscheme dracula
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+>>>>>>> 45e79e244297b1bbb143014798b5d6eec4352cd6
 syntax enable
 filetype plugin indent on
 set linebreak
@@ -90,6 +106,9 @@ set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set tabstop=2
 set shiftwidth=2
 set noexpandtab
+set wrap
+set list
+set listchars=tab:—•,space:•
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
@@ -137,5 +156,5 @@ let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 
 " Run PrettierAsync on save
-let g:prettier#autoformat = 0
+let g:prettier#autoformat = 1
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
