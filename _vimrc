@@ -60,14 +60,9 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
-<<<<<<< HEAD
-colorscheme gruvbox
-set background=dark
-=======
 colorscheme dracula
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
->>>>>>> 45e79e244297b1bbb143014798b5d6eec4352cd6
 syntax enable
 filetype plugin indent on
 set linebreak
@@ -103,12 +98,15 @@ set relativenumber
 set scrolloff=4
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-set tabstop=2
-set shiftwidth=2
 set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
 set wrap
 set list
-set listchars=tab:—•,space:•
+set listchars=tab:│·,trail:·,extends:→
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
