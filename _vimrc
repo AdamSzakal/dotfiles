@@ -50,6 +50,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " Pretty colors
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'cocopon/iceberg.vim'
 
 " Get rocking with some fuzzy finding (NOTE: Install through homebrew)
 Plug '/usr/local/opt/fzf'
@@ -60,7 +61,7 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
-colorscheme dracula
+colorscheme iceberg
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 syntax enable
