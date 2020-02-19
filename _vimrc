@@ -21,8 +21,8 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
-"
+" Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
+ 
 " For COC
 set hidden
 set nobackup
@@ -74,9 +74,6 @@ set guicursor=n-v-c:hor20-Cursor
 "set .md-syntax on .txt-files
 au BufNewFile,BufRead,BufReadPost *.txt set syntax=Markdown
 
-" Copy to system clipboard instead of VIMs own
-" set clipboard=unnamedplus
-
 " Hide current file in background if new one is opened
 set hidden
 
@@ -110,9 +107,9 @@ set preserveindent
 set softtabstop=0
 set shiftwidth=4
 set tabstop=4
-set wrap
+set nowrap
 set list
-set listchars=tab:│·,trail:·,extends:→
+set listchars=tab:│·,extends:→
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
