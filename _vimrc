@@ -46,6 +46,8 @@ Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale' "async linting engine
 Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Pretty colors
 Plug 'morhetz/gruvbox'
@@ -68,6 +70,9 @@ syntax enable
 filetype plugin indent on
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
+
+"set .md-syntax on .txt-files
+au BufNewFile,BufRead,BufReadPost *.txt set syntax=Markdown
 
 " Copy to system clipboard instead of VIMs own
 " set clipboard=unnamedplus
