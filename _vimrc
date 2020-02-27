@@ -70,9 +70,14 @@ syntax enable
 filetype plugin indent on
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
+set guicursor+=i:ver100-iCursor
+let &t_SI = "\<Esc>]50;CursorShape=1\x7" "Change cursor depending on mode
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 "set .md-syntax on .txt-files
 au BufNewFile,BufRead,BufReadPost *.txt set syntax=Markdown
+let g:vim_markdown_folding_disabled = 1 "don't fold .md-headers by default...
 
 " Hide current file in background if new one is opened
 set hidden
@@ -139,7 +144,7 @@ nnoremap <C-t> :FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 " Use ctrl+c for fzf commit browser
 nnoremap <C-c> :Commits<CR>
-" Use ctrl+g for fzf git status (:GFiles?)
+" Use ctrl+g for fzf git status (o:GFiles?)
 nnoremap <C-g> :GFiles?<CR>
 
 " Use ctrl+n for NERDTreeToggle
