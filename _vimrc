@@ -39,7 +39,7 @@ Plug 'tpope/vim-fugitive'
 " Layout and syntax
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'machakann/vim-highlightedyank'
-Plug 'etdev/vim-hexcolor'
+Plug 'gko/vim-coloresque'
 Plug 'jparise/vim-graphql'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -63,10 +63,12 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
+set background=dark
 colorscheme iceberg
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 syntax enable
+set wrap
 filetype plugin indent on
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
@@ -118,9 +120,6 @@ set listchars=tab:│·,extends:→
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
-
-" Use english UI language
-language en_US
 
 " Search options.
 set hlsearch "Highlight search results
