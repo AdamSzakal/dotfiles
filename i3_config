@@ -41,6 +41,10 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Brightness controls
+bindsym XF86MonBrightnessDown exec brightnessctl --device="intel_backlight" s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl --device="intel_backlight" s +10%
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -51,7 +55,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 #autostart
-exec --no-startup-id hsetroot -cover ~/Pictures/grinda.jpg
+exec --no-startup-id hsetroot -cover ~/Pictures/gransen.jpg
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 
