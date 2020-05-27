@@ -64,7 +64,7 @@ call plug#end()
 set nocompatible
 set termguicolors
 set background=dark
-colorscheme iceberg
+colorscheme dracula
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 syntax enable

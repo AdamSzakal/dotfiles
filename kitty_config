@@ -1,0 +1,88 @@
+# Copy/Paste shortcuts for humans
+map ctrl+c copy_to_clipboard
+map ctrl+v paste_from_clipboard
+
+# Type
+font_family Fira Code
+font_size 9.0
+adjust_line_height 2
+
+
+## ICEBERG COLOR SCHEME
+# # Colors
+# background #161821
+# foreground #c6c8d1
+# # black
+# color0 #161821
+# color8 #6b7089
+# # red
+# color1 #e27878
+# color9 #e98989
+# # green
+# color2 #b4be82
+# color10 #c0ca8e
+# # yellow
+# color3 #e2a478
+# color11 #e9b189
+# # blue
+# color4 #84a0c6
+# color12 #91acd1
+# # magenta
+# color5 #a093c7
+# color13 #ada0d3
+# # cyan
+# color6 #89b8c2
+# color14 #95c4ce
+# # white
+# color7 #c6c8d1
+# color15 #d2d4de
+
+## DRACULA COLOR SCHEME
+foreground            #f8f8f2
+background            #282a36
+selection_foreground  #44475a
+selection_background  #f8f8f2
+
+url_color #ffb86c
+
+# black
+color0  #21222c
+color8  #6272a4
+
+# red
+color1  #ff5555
+color9  #ff6e6e
+
+# green
+color2  #50fa7b
+color10 #69ff94
+
+# yellow
+color3  #f1fa8c
+color11 #ffffa5
+
+# blue
+color4  #bd93f9
+color12 #d6acff
+
+# magenta
+color5  #ff79c6
+color13 #ff92df
+
+# cyan
+color6  #8be9fd
+color14 #a4ffff
+
+# white
+color7  #f8f8f2
+color15 #ffffff
+
+# Cursor colors
+cursor            #f8f8f2
+cursor_text_color background
+
+# Tab bar colors
+active_tab_foreground   #44475a
+active_tab_background   #f8f8f2
+inactive_tab_foreground #282a36
+inactive_tab_background #6272a4

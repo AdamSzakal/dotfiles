@@ -58,6 +58,7 @@ bindsym $mod+Shift+q kill
 exec --no-startup-id hsetroot -cover ~/Pictures/gransen.jpg
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
+exec --no-startup-id i3-msg '$ws10; exec /usr/bin/spotify'
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec rofi -show run
