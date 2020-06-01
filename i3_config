@@ -17,7 +17,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Iosevka 10
+font pango: Iosevka 9
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -61,7 +61,8 @@ bindsym $mod+Shift+q kill
 focus_follows_mouse no
 
 #autostart
-exec --no-startup-id hsetroot -cover ~/Pictures/gransen.jpg
+# exec --no-startup-id hsetroot -cover ~/Pictures/gransen.jpg
+exec --no-startup-id hsetroot -solid "#414350"
 exec --no-startup-id xsettingsd &
 # exec --no-startup-id compton -b
 exec --no-startup-id i3-msg '$ws9; exec /usr/bin/spotify'
@@ -70,7 +71,7 @@ exec --no-startup-id i3-msg '$ws9; exec /usr/bin/spotify'
 # bindsym $mod+d exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
-bindsym $mod+space exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Iosevka 10'
+bindsym $mod+space exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Iosevka 9'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
