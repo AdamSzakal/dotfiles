@@ -64,11 +64,10 @@ call plug#end()
 set nocompatible
 set termguicolors
 set background=dark
-colorscheme dracula
+colorscheme iceberg
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 syntax enable
-set wrap
 filetype plugin indent on
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
@@ -114,7 +113,7 @@ set preserveindent
 set softtabstop=0
 set shiftwidth=4
 set tabstop=4
-set nowrap
+set wrap
 set list
 set listchars=tab:│·,extends:→
 
