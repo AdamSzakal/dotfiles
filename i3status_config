@@ -1,42 +1,61 @@
+
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+
+
 general {
-        output_format = "i3bar"
-        colors = false
+    output_format = "i3bar"
+        colors = true
         markup = pango
-        interval = 1
-        color_good = '#F8F8F2'
-		color_degraded = '#ebcb8b'
-		color_bad = '#ba5e57'
+        interval = 5
+        color_good = '#89b8c2'
+		color_degraded = '#e2a478'
+		color_bad = '#e47878'
 }
 
-/* order += "load" */
-/* order += "cpu_temperature 0" */
-order += "disk /"
-order += "wireless wlp2s0b1"
+# Color variables
+/* set $red	#e47878 */
+/* set $orange	#e2a478 */
+/* set $green	#b4be82 */
+/* set $blue	#89b8c2 */
+/* set $ocean	#84a0c6 */
+/* set $purple	#a093c7 */
+
+/* order += "disk /" */
 order += "volume master"
+/* /1* order += "wireless wlp2s0b1" *1/ */
+/* /1* order += "path_exists VPN" *1/ */
 order += "battery 0"
 order += "tztime local"
 
-/* load { */
-/*         format = "<span >  %5min CPU  </span>" */
-/* } */
-
-/* cpu_temperature 0 { */
-/*         format = "<span >%degrees °C </span>" */
-/*         path = "/sys/class/thermal/thermal_zone0/temp" */
-/* } */
-
 disk "/" {
-        format = "<span >%free Free </span>"
+    /* format = "<span background='{$red}' color='#161821'> %used / 120  </span>" */
+	/* low_threshold = "10" */
+	format = " ⛁ %avail"
+	prefix_type = decimal
 }
 
 wireless wlp2s0b1 {
-        format_up = "<span >%essid </span>"
-        format_down = "<span >  Disconnected </span>"
+    /* format_up = "<span background='#89b8c2' color='#161821'> ⚏ %essid (%quality) </span>" */
+    format_up = " %essid (%quality) "
+    format_down = "<span background='#e47878' color='#161821'>  Disconnected </span>"
+}
+
+path_exists VPN {
+    format = "<span background='#b4be82' color='#000000'> ☺ VPN </span>"
+  	format_down = "<span background='#e47878' color='#000000'> ☹ VPN Disconnected </span>"
+   	path = "/sys/class/net/ppp0"
 }
 
 volume master {
-        format = "<span >Vol: %volume </span>"
-        format_muted = "<span >Muted</span>"
+    format = "Vol: %volume "
+        format_muted = "<span background='#e47878' color='#161821'> Muted </span>"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -44,18 +63,20 @@ volume master {
 
 battery 0 {
 	last_full_capacity = true
-        format = "<span >%status %percentage </span>"
-        format_down = "No Battery"
-        status_chr = "Charging"
-        status_bat = "Battery"
-        status_unk = "Unknown"
-        status_full = "Charged"
+		integer_battery_capacity = true
+        format = "%status %percentage ( %remaining )"
+        # /* format_low = "<span background='#e47878'>%status %percentage </span>" */
+        # format_down = "No Battery"
+        status_chr = "  "
+        status_bat = ""
+        # status_full = "   Charged"
         path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
+        low_threshold = 27
 }
 
 tztime local {
-		format = "<span>%time </span>"
+		/* format = "<span background='#828595'>%time </span>" */
+		format = "%time •"
 		format_time = "%a %-d %b %H:%M"
 }
 

@@ -21,7 +21,6 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
  
 " For COC
 set hidden
@@ -50,7 +49,6 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " Pretty colors
-Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'cocopon/iceberg.vim'
 
@@ -65,8 +63,11 @@ set nocompatible
 set termguicolors
 set background=dark
 colorscheme iceberg
+
+"dracula specific settings
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
+
 syntax enable
 filetype plugin indent on
 set linebreak

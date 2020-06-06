@@ -8,7 +8,6 @@ font_features +zero +calt +liga
 font_size 10.0
 adjust_line_height 2
 
-
 ## ICEBERG COLOR SCHEME
 # Colors
 background #161821

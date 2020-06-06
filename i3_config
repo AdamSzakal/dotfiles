@@ -14,9 +14,6 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 9
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Iosevka 9
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -62,7 +59,8 @@ focus_follows_mouse no
 
 #autostart
 # exec --no-startup-id hsetroot -cover ~/Pictures/gransen.jpg
-exec --no-startup-id hsetroot -solid "#414350"
+# exec --no-startup-id hsetroot -solid "#414350"
+exec --no-startup-id hsetroot -cover ~/Pictures/rtj3.png
 exec --no-startup-id xsettingsd &
 # exec --no-startup-id compton -b
 exec --no-startup-id i3-msg '$ws9; exec /usr/bin/spotify'
@@ -103,7 +101,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-# bindsym $mod+Shift+space floating toggle
+bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
@@ -160,24 +158,24 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym odiaeresis resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
+# same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+# back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
@@ -194,17 +192,19 @@ bindsym --release $mod+Shift+Control+4 exec "scrot -s 'Screenshot_%Y-%m-%d_%T.pn
 # finds out, if available)
 # panel
 bar {
-        colors {
+    colors {
         background #282A36
-        separator #44475A
+        separator #5b5f72
 
-        # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
-    }
-        status_command i3status
+		# colour of border, background, and text
+        	focused_workspace       #2f343f #b6bd89 #282a36
+        	active_workspace        #2f343f #2f343f #d8dee8
+        	inactive_workspace      #2f343f #2f343f #d8dee8
+        	urgent_workspace       #2f343f #e47878 #282a36
+	}
+
+	separator_symbol "•"
+    	status_command i3status
 }
 
 # window rules, you can find the window class using xprop
