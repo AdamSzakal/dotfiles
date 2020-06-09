@@ -30,25 +30,21 @@ call plug#end()
 "Appearance
 set nocompatible
 set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" " set Vim-specific sequences for RGB colors
+set t_Co=16
 set background=dark
 colorscheme iceberg
 syntax enable
 filetype plugin indent on
+
 set linebreak
 set guicursor=n-v-c:hor20-Cursor
 set guicursor+=i:ver100-iCursor
+
 let &t_SI = "\<Esc>]50;CursorShape=1\x7" "Change cursor depending on mode
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-" For COC
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
 
 "set .md-syntax on .txt-files
 au BufNewFile,BufRead,BufReadPost *.txt set syntax=Markdown
@@ -77,7 +73,6 @@ set number
 set relativenumber
 set scrolloff=4
 set laststatus=2
-set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set noexpandtab
 set copyindent
 set preserveindent
@@ -85,8 +80,23 @@ set softtabstop=0
 set shiftwidth=4
 set tabstop=4
 set wrap
-set list
-" set listchars=tab:│·,extends:→
+set nolist
+
+"Statusline
+set statusline=
+set statusline+=%#Title# " use title formatting
+set statusline+=\ %F " path to open file
+set statusline+=%#Directory# " use title formatting
+set statusline+=\ %y " active syntax
+set statusline+=%## " ends formatting
+set statusline+=%= "flexible space
+set statusline+=%#Conceal# " use title formatting
+set statusline+=\ %p%% " percentage of file
+set statusline+=%## " ends formatting 
+set statusline+=\ %l:%c " line and column
+set statusline+=%#Directory# " use Directory formatting
+set statusline+=\ %{strftime('%H:%M')} " time
+set statusline+=\ 
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
@@ -116,14 +126,11 @@ nnoremap <C-c> :Commits<CR>
 " Use ctrl+g for fzf git status (o:GFiles?)
 nnoremap <C-g> :GFiles?<CR>
 
-" Set timeout for highlight of yanked content
-" let g:highlightedyank_highlight_duration = 750
-
-" Get Ale to behave a bit better
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-
-" Run PrettierAsync on save
-let g:prettier#autoformat = 1
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" For COC
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes

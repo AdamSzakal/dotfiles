@@ -5,7 +5,7 @@ map ctrl+v paste_from_clipboard
 # Type
 font_family Iosevka 
 font_features +zero +calt +liga
-font_size 14.0
+font_size 15.0
 adjust_line_height 2
 
 
