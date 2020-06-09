@@ -1,7 +1,7 @@
 " Initiate fzf.vim
 set rtp+=/usr/local/opt/fzf
 
-" Check if vim plug is installed
+" Check if vim plug is installed, install if not
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -11,52 +11,19 @@ endif
 " Call plugins 
 call plug#begin('~/.vim/plugged')
 
-" UI-related
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" Text manipulation
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
-Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neoclide/coc-tsserver', {'do': 'npm i'}
- 
-" For COC
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-
-"Git-related
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-
-" Layout and syntax
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'machakann/vim-highlightedyank'
 Plug 'gko/vim-coloresque'
-Plug 'jparise/vim-graphql'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'w0rp/ale' "async linting engine
 Plug 'skywind3000/asyncrun.vim' "Enable async autocommands
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
-" Pretty colors
-Plug 'morhetz/gruvbox'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'cocopon/iceberg.vim'
-
-" Get rocking with some fuzzy finding (NOTE: Install through homebrew)
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -65,8 +32,6 @@ set nocompatible
 set termguicolors
 set background=dark
 colorscheme iceberg
-let g:dracula_colorterm = 0
-let g:dracula_italic = 0
 syntax enable
 filetype plugin indent on
 set linebreak
@@ -76,12 +41,18 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7" "Change cursor depending on mode
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" For COC
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+
 "set .md-syntax on .txt-files
 au BufNewFile,BufRead,BufReadPost *.txt set syntax=Markdown
 let g:vim_markdown_folding_disabled = 1 "don't fold .md-headers by default...
-
-" Hide current file in background if new one is opened
-set hidden
 
 " Set command history to go way back
 set history=1000
@@ -115,7 +86,7 @@ set shiftwidth=4
 set tabstop=4
 set wrap
 set list
-set listchars=tab:│·,extends:→
+" set listchars=tab:│·,extends:→
 
 " Highlight active row when editing
 autocmd InsertEnter,InsertLeave * set cul!
@@ -145,14 +116,8 @@ nnoremap <C-c> :Commits<CR>
 " Use ctrl+g for fzf git status (o:GFiles?)
 nnoremap <C-g> :GFiles?<CR>
 
-" Use ctrl+n for NERDTreeToggle
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-" Close NERDTree if it's the last buffer open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " Set timeout for highlight of yanked content
-let g:highlightedyank_highlight_duration = 750
+" let g:highlightedyank_highlight_duration = 750
 
 " Get Ale to behave a bit better
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
