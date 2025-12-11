@@ -1,7 +1,3 @@
--- Set leader key to space
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("config") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -9,11 +5,16 @@ if not vim.loop.fs_stat(lazypath) then
     "git",
     "clone",
     "--filter=blob:none",
+    "--branch=stable",
     "https://github.com/folke/lazy.nvim.git",
     lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- Set leader key to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Detect system dark mode (macOS)
 local function is_dark_mode()
@@ -24,7 +25,8 @@ local function is_dark_mode()
 end
 
 -- Pick theme based on system mode
-local current_flavour = is_dark_mode() and "macchiato" or "latte"
+current_flavour = "macchiato"
+-- local current_flavour = is_dark_mode() and "macchiato" or "latte"
 
 -- Setup plugins
 require("lazy").setup({
