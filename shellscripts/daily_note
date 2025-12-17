@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+daily_note() {
+    # Define the directory where you want to check
+    target_directory="$HOME/Dropbox/Notes/daily"
+
+    echo "hello"
+    # Get the current date and weekday in the desired format [YYYY-MM-DD, dddd]
+    # current_date=$(date +"%Y-%m-%d_%A")
+	current_date=$(LC_TIME=C date +"%Y-%m-%d %A") # make sure days are in english
+    # current_date_human=$(date +"%Y-%m-%d, %A")
+
+    # Define the target file path
+    target_file="$target_directory/$current_date.md"
+
+	# Define the latest daily note
+	all_notes=("$target_directory"/*)
+	latest_note="${all_notes[-1]}"
+	echo $latest_note
+
+    # Check if the file exists
+    if [[ -f "$target_file" ]]; then
+        echo "File exists. Opening in vim..."
+        nvim "$target_file"
+    else
+        echo "File does not exist. Creating and opening in vim..."
+		touch "$target_file"
+		echo "# $current_date" > "$target_file"
+		# Copy the contents starting from line 2 into the destination file (This is where the Todo-section starts)
+		tail -n +2 "$latest_note" >> "$target_file"
+        nvim "$target_file"
+    fi
+}
