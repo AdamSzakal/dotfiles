@@ -81,4 +81,4 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 -- Toggle NERDTree
 vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', { desc = 'Toggle NERDTree' })
 -- Insert a markdown header with todays day and date
-vim.keymap.set('n', '<C-d>', ":pu = '# ' . strftime('%Y-%m-%d %A')<CR>")
+vim.keymap.set('n', '<C-d>', ":pu! = '# ' . strftime('%Y-%m-%d %A')<CR>")
